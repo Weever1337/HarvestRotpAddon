@@ -1,0 +1,32 @@
+{
+  "skins": {
+    "rotp_harvest:rabbit": {
+      "stand_type": "rotp_harvest:harvest_stand",
+      "color": "0xffffff"
+    },
+    "rotp_harvest:purple": {
+      "stand_type": "rotp_harvest:harvest_stand",
+      "color": "0xecb1ff"
+    },
+    "rotp_harvest:blue": {
+      "stand_type": "rotp_harvest:harvest_stand",
+      "color": "0xa36cff"
+    },
+    "rotp_harvest:red": {
+      "stand_type": "rotp_harvest:harvest_stand",
+      "color": "0xb25172"
+    },
+    "rotp_harvest:ryomen_sukuna": {
+      "stand_type": "rotp_harvest:harvest_stand",
+      "color": "0xb3484b"
+    },
+    "rotp_harvest:sukuna_itadori": {
+      "stand_type": "rotp_harvest:harvest_stand",
+      "color": "0xe57c7c"
+    },
+    "rotp_harvest:sukuna_megumi": {
+      "stand_type": "rotp_harvest:harvest_stand",
+      "color": "0x091337"
+    }
+  }
+}

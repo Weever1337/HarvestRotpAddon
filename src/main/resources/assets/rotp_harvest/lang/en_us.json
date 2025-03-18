@@ -1,0 +1,29 @@
+{
+  "entity.rotp_harvest.harvest_stand": "Harvest",
+  "entity.rotp_harvest.harvest": "Harvest",
+  "stand.rotp_harvest.harvest_stand": "Harvest",
+
+  "action.rotp_harvest.set_target": "Set Target",
+  "action.rotp_harvest.set_target.additional": "Set Target: %s",
+  "action.rotp_harvest.forget_target": "Forget Target",
+  "action.rotp_harvest.give_a_potion": "Give A Potion",
+  "action.rotp_harvest.remove_a_potion": "Remove A Potion",
+
+  "action.rotp_harvest.go_to_this_place": "Go to this Place",
+  "action.rotp_harvest.go_to_this_place.additional": "Go to %s",
+  "action.rotp_harvest.stay_with": "\"Stay with %s\"",
+  "action.rotp_harvest.search": "\"Search!\"",
+  "action.rotp_harvest.be_closer": "\"Be Closer\"",
+  "action.rotp_harvest.be_closer.not": "Break \"Be Closer\"",
+  "action.rotp_harvest.control_harvest": "\"What do they see?\"",
+  "action.rotp_harvest.carry_up": "Carry Up",
+
+  "message.rotp_harvest.harvesting": "Press SHIFT to leave",
+
+  "death.attack.rotp_harvest_punch": "%1$s was punched",
+  "death.attack.rotp_harvest_punch.player": "%s was punched by %s",
+  "death.attack.rotp_harvest_stab": "%1$s was stabbed",
+  "death.attack.rotp_harvest_stab.player": "%s was stabbed by %s",
+  "death.attack.rotp_harvest_bite": "%1$s was bitten",
+  "death.attack.rotp_harvest_bite.player": "%s was bitten by %s"
+}

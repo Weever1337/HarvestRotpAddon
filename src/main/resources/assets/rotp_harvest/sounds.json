@@ -1,0 +1,11 @@
+{
+  "hv_summon": {
+    "sounds": [ "rotp_harvest:summon" ]
+  },
+  "hv_unsummon": {
+    "sounds": [ "rotp_harvest:unsummon" ]
+  },
+  "hv_step": {
+    "sounds": [ "rotp_harvest:step" ]
+  }
+}
