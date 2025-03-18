@@ -13,6 +13,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.weever.rotp_harvest.capability.LivingUtilCap;
 import net.weever.rotp_harvest.capability.LivingUtilCapProvider;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BeCloser extends StandAction {
@@ -48,8 +49,8 @@ public class BeCloser extends StandAction {
     }
 
     @Override
-    public ResourceLocation getIconTexture(@Nullable IStandPower power) {
-        if (power != null) {
+    public @NotNull ResourceLocation getIconTexture(@Nullable IStandPower power) {
+        if (power != null && power.getStandInstance().isPresent()) {
             boolean isCloser = power.getUser().getCapability(LivingUtilCapProvider.CAPABILITY).map(LivingUtilCap::isCloser).orElse(false);
             return isCloser ? StandSkinsManager.getInstance() != null ? (StandSkinsManager.getInstance().getRemappedResPath(manager -> manager
                             .getStandSkin(power.getStandInstance().get()), bentText.get())) : bentText.get() : super.getIconTexture(power);
