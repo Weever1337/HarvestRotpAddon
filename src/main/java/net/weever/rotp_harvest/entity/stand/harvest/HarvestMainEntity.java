@@ -44,10 +44,7 @@ import net.weever.rotp_harvest.util.HarvestUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public class HarvestMainEntity extends TameableEntity implements IRideable {
     private static final DataParameter<Boolean> CLIMBING = EntityDataManager.defineId(HarvestMainEntity.class, DataSerializers.BOOLEAN);
@@ -144,7 +141,7 @@ public class HarvestMainEntity extends TameableEntity implements IRideable {
         this.targetSelector.addGoal(1, new HarvestOwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new HarvestNearestAttackableTargetGoal<>(this, MobEntity.class, 15, false, false, target -> target != getOwner() && target.isAlive() && target instanceof IMob, false));
 //        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, MobEntity.class, 5, false, false, (p_234199_0_) -> p_234199_0_ != this.getOwner()));
-        this.targetSelector.addGoal(2, new HarvestNearestAttackableTargetGoal<>(this, PlayerEntity.class, 15, false, false, entity -> entity.isAlive() && !entity.is(getOwner()), true));
+        this.targetSelector.addGoal(2, new HarvestNearestAttackableTargetGoal<>(this, PlayerEntity.class, 15, false, false, entity -> entity.isAlive() && !entity.is(Objects.requireNonNull(getOwner())), true));
     }
 
     @Override
