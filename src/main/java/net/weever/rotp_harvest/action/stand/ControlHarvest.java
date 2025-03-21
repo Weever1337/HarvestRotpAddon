@@ -27,13 +27,15 @@ public class ControlHarvest extends StandAction {
                     target.getEntity() instanceof HarvestMainEntity &&
                     ((HarvestMainEntity) target.getEntity()).getOwner() == user;
             return (isClient && (isCameraEntityHarvest || isTargetEntityHarvest)) ?
-                    ActionConditionResult.POSITIVE : ActionConditionResult.NEGATIVE; // AHH FUCK STUPID "LAMBDA" 🐹🐹🐹
+                    ActionConditionResult.POSITIVE : ActionConditionResult.NEGATIVE;
         }
         return ActionConditionResult.NEGATIVE;
     }
 
     @Override
     protected void perform(World world, LivingEntity user, IStandPower power, ActionTarget target) {
-        HarvestUtil.controlHarvest(user, (HarvestMainEntity) target.getEntity());
+        if (target.getEntity() instanceof HarvestMainEntity) {
+            HarvestUtil.controlHarvest(user, (HarvestMainEntity) target.getEntity());
+        }
     }
 }
