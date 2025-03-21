@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 import net.weever.rotp_harvest.HarvestAddon;
 import net.weever.rotp_harvest.entity.stand.harvest.HarvestMainEntity;
 import net.weever.rotp_harvest.init.InitStands;
+import org.jetbrains.annotations.NotNull;
 
 public class HarvestMainRenderer extends MobRenderer<HarvestMainEntity, HarvestMainModel> {
 
@@ -24,15 +25,17 @@ public class HarvestMainRenderer extends MobRenderer<HarvestMainEntity, HarvestM
     }
 
     @Override
-    public ResourceLocation getTextureLocation(HarvestMainEntity entity) {
-        IStandPower.getStandPowerOptional(entity.getOwner()).ifPresent(power -> {
-            StandType<?> standType = InitStands.HARVEST.getStandType();
-            if (power.getType() == standType) {
-                SHEER = getRemappedTexture(power.getStandInstance().get());
-            } else {
-                SHEER = TEXTURE;
-            }
-        });
+    public @NotNull ResourceLocation getTextureLocation(HarvestMainEntity entity) {
+        if (entity.getOwner() != null) {
+            IStandPower.getStandPowerOptional(entity.getOwner()).ifPresent(power -> {
+                StandType<?> standType = InitStands.HARVEST.getStandType();
+                if (power.getType() == standType && power.getStandInstance().isPresent()) {
+                    SHEER = getRemappedTexture(power.getStandInstance().get());
+                } else {
+                    SHEER = TEXTURE;
+                }
+            });
+        }
         return ClientUtil.canSeeStands() ? SHEER : VOID;
     }
 
